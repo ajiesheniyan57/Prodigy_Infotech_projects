@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Navigation Menu</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation Styles */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+
+    nav.scrolled {
+      background-color: #1e1e1e;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    /* Page Content */
+    .content {
+      padding: 120px 30px 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .content h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .content a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .content a:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">Ajiesh's site</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#internship">Internship</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content" id="home">
+    <h2>Welcome to Ajiesh's site</h2>
+    <p>This is a sample landing page with a responsive and interactive navigation bar.</p>
+  </div>
+
+  <div class="content" id="internship">
+    <h2>Internship Opportunity at Prodigy Infotech</h2>
+    <p>Prodigy Infotech offers exciting virtual internship opportunities in areas such as Web Development, Data Science, Java Programming, and more.</p>
+    <p>Interns will gain real-world project experience and receive a certificate upon completion.</p>
+    <p><strong>Duration:</strong> 1 Month</p>
+    <p><strong>Mode:</strong> Remote / Work from Home</p>
+    <p><strong>Eligibility:</strong> Open to all students and recent graduates.</p>
+    <a href="https://prodigyinfotech.dev" target="_blank">Apply Now</a>
+  </div>
+
+  <div class="content" id="about">
+    <h2>About Us</h2>
+    <p>We help students and professionals build technical skills and find meaningful internship opportunities.</p>
+  </div>
+
+  <div class="content" id="contact">
+    <h2>Contact</h2>
+    <p>Email us at: info@mysite.com</p>
+  </div>
+
+  <script>
+    // Change navbar background on scroll
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
